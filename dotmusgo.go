@@ -5,8 +5,8 @@ import (
 	"github.com/ymz-ncnk/musgo"
 )
 
-// MiddleDot is used as filename prefix.
-const MiddleDot = "·"
+// Prefix for filename.
+const Prefix = "a__"
 
 // New returns a new MusGo.
 func New() (musgo.MusGo, error) {
@@ -18,8 +18,7 @@ func New() (musgo.MusGo, error) {
 	return musGo, nil
 }
 
-// FilenameBuilder creates a filename for the generated file, uses MiddleDot as
-// prefix.
+// FilenameBuilder creates a filename for the generated file.
 func FilenameBuilder(td musgen.TypeDesc) string {
-	return MiddleDot + musgo.DefaultFilenameBuilder(td)
+	return Prefix + musgo.DefaultFilenameBuilder(td)
 }
